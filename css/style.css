@@ -4,21 +4,29 @@ body{
     grid-template-rows: 104px 1fr 47px;
 }
 header{
-    background-color: tomato;
     background: url(../img/header.png);
     background-position: center;
 }
 .gradient{
     height: 100%;
+    width: 100%;
     background: linear-gradient(#0000,#ba007cd2);
-}
-#logo{
-    transform: translate(32px,17px);
 }
 
 main{
-    background-color: darkseagreen;
+    background-color: #20202D;
+
 }
+
+.background{
+    height: 100%;
+    background: url(../img/main-background.png);
+    background-position: center;
+    background-size: cover;
+}
+
 footer{
-    background-color: lightblue;
+    background: url(../img/header.png);
+    background-position: top;
 }
+

@@ -1,0 +1,6 @@
+footer .gradient{
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
