@@ -1,0 +1,38 @@
+.part-characters{
+    height: 90%;
+    width: 90%;
+    background-color: #0005;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-box{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.character-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.back-arrow{
+    height: 50px;
+    place-self: end;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.back-arrow p{
+    transform: translate(90px,-55px);
+    position: absolute;
+}

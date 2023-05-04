@@ -1,0 +1,26 @@
+.content{
+    height: 100%;
+    background: url(../img/main-background.png);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+}
+
+.card-box{
+    height: 600px;
+    width: 1000px;
+    background-color: #0005;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.card-box img:hover{
+    filter: drop-shadow(0 0 0.75rem #BA007D);
+}
