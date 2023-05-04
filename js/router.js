@@ -1,9 +1,9 @@
 'use strict'
 
 const routes = {
-    '/'                : '/jojo-api-publica/pages/main.html',
-    '/parte'           : '/jojo-api-publica/pages/parte.html',
-    '/parte/character' : '/jojo-api-publica/pages/character.html'
+    '/jojo-api-publica/'                : '/jojo-api-publica/pages/main.html',
+    '/jojo-api-publica/parte'           : '/jojo-api-publica/pages/parte.html',
+    '/jojo-api-publica/parte/character' : '/jojo-api-publica/pages/character.html'
 }
 
 const route = async (part) => {
