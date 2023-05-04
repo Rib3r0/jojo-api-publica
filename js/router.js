@@ -1,15 +1,15 @@
 'use strict'
 
 const routes = {
-    '/'                : '/pages/main.html',
-    '/parte'           : '/pages/parte.html',
-    '/parte/character' : '/pages/character.html'
+    '/'                : '/jojo-api-publica/pages/main.html',
+    '/parte'           : '/jojo-api-publica/pages/parte.html',
+    '/parte/character' : '/jojo-api-publica/pages/character.html'
 }
 
 const route = async (part) => {
 
     if(part == 0){
-        const response = await fetch('/pages/main.html')
+        const response = await fetch('/jojo-api-publica/pages/main.html')
         const html = await response.text()
         document.getElementById('content').innerHTML = html
         console.log("oi");
