@@ -1,10 +1,14 @@
 'use strict'
 
+import { showCharactersCard } from './app.js'
+
 const routes = {
     '/jojo-api-publica/'                : '/jojo-api-publica/pages/main.html',
     '/jojo-api-publica/parte'           : '/jojo-api-publica/pages/parte.html',
     '/jojo-api-publica/parte/character' : '/jojo-api-publica/pages/character.html'
 }
+
+var parte = 0
 
 const route = async (part) => {
 
@@ -24,7 +28,9 @@ const route = async (part) => {
     
         document.getElementById('content').innerHTML = html
     
-
+        if(route == '/jojo-api-publica/pages/parte.html'){
+            showCharactersCard(part)
+        }
     }
 
 }

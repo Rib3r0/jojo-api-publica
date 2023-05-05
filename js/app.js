@@ -20,34 +20,46 @@ const createCharacters = async (id) => {
     return characters.data
 }
 
-export const showCharactersCard = async () => {
+export const showCharactersCard = async (id) => {
 
-    let id = window.event.currentTarget.id
+    
     let characters = await createCharacters(id)
     console.log(characters) 
-    characters.map(createCharactersCard)
+    createCharactersCard(characters)
+
 
 }
 
 const createCharactersCard = (characters) =>{
 
-    let character_box =  window.parent.document.getElementById('character-box')
+    let character_box =  document.getElementById('character-box')
+    let charactersCard = {}
+    characters.forEach( character => {
 
-    let character_container = document.createElement('a')
-    character_container.classList.add('character-container')
-    character_container.setAttribute('href','/jojo-api-publica/parte/character')
-    character_container.addEventListener("click", route)
+    
+        let character_container = document.createElement('a')
+        character_container.classList.add('character-container')
+        character_container.setAttribute('href','/jojo-api-publica/parte/character')
+        character_container.addEventListener("click", route)
+    
+    
+    
+        let character_image =document.createElement('img')
+        //console.log(character.character.images.webp.image_url)
+        character_image.setAttribute('src',character.character.images.jpg.image_url)
+        character_container.append(character_image)
+    
+        let character_name =document.createElement('p')
+        character_name.textContent = character.character.name
+        //console.log(character.character.name)
+        character_container.append(character_name)
 
-    console.log(character_container);
-    console.log(character_box);
-    character_box[1].replaceChildren([character_container])
-
-    let character_image =document.createElement('img')
+        console.log(character_container);
+        character_box.append(character_container)
+    });
 
 
-    let character_name =document.createElement('p')
-    console.log(character_box);
-
+    character_box.replaceChildren(charactersCard)
 
 }
 
