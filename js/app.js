@@ -22,8 +22,8 @@ const createCharacters = async (id) => {
 
 const getCharacterImages = async (id) => {
 
-    let images = await getCharacterInfo(id)
-    return images
+    let images, infos = await getCharacterInfo(id)
+    return images , infos
 
 }
 
@@ -40,7 +40,7 @@ export const showCharacterImages = async (id) => {
     
     let images = await getCharacterImages(id)
     console.log(images) 
-    createCharacterImages(images)
+    createCharacterImages(images[0], images[1])
 
 }
 
@@ -84,7 +84,7 @@ const createCharactersCard = (characters) =>{
 
 }
 
-const createCharacterImages = (images) =>{
+const createCharacterImages = (images, infos) =>{
 
     let character_images =  document.getElementById('character-images')
     let charactersCard = document.createElement('div')
@@ -98,6 +98,11 @@ const createCharacterImages = (images) =>{
         charactersCard.append(character_image)
     });
 
+    let character_main_image =  document.getElementById('main__image')
+    character_main_image.setAttribute('src',infos.images.jpg.image_url)
+
+    let character_name =  document.getElementById('main__name')
+    character_name.textContent = infos.name
 
     character_images.replaceChildren(charactersCard)
 

@@ -2,28 +2,35 @@
     place-self: center;
     display: flex;
     gap: 20px;
-    height: 90%;
+    height: 100%;
+    padding: 50px;
     width: 90%;
+}
+#character-images{
+    height: fit-content;
+    min-width: 80%;
 }
 .character-images{
     width: 90%;
-    gap: 20px;
+    min-height: 100%;
     background-color: #0005;
     place-self: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
+    justify-content: center;
     gap: 20px;
 }
 .character-images img{
     height: 200px;
+    place-self: center;
 }
 .character-info{
-    height: 90%;
-    width: 30%;
     background-color: #0005;
     place-self: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
 }
@@ -32,4 +39,21 @@
 }
 .character .character-container p{
     font-size: 2.5rem;
+    text-align: center;
+}
+.character-container{
+    width: fit-content;
+}
+
+@media (max-width:960px) {
+    .character{
+        flex-direction: column-reverse;
+    }
+    .character-info{
+        background-color: #0005;
+        place-self: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
