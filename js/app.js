@@ -33,7 +33,8 @@ export const showCharactersCard = async (id) => {
 const createCharactersCard = (characters) =>{
 
     let character_box =  document.getElementById('character-box')
-    let charactersCard = {}
+    let charactersCard = document.createElement('div')
+    charactersCard.classList.add('character-box')
     characters.forEach( character => {
 
     
@@ -55,7 +56,7 @@ const createCharactersCard = (characters) =>{
         character_container.append(character_name)
 
         console.log(character_container);
-        character_box.append(character_container)
+        charactersCard.append(character_container)
     });
 
 

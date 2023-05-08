@@ -1,5 +1,5 @@
 .part-characters{
-    height: 90%;
+    margin: 20px;
     width: 90%;
     background-color: #0005;
     place-self: center;
@@ -8,7 +8,6 @@
 }
 
 .character-box{
-    height: 90%;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -17,6 +16,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    padding-bottom: 50px;
 }
 .character-container{
     display: flex;
@@ -25,6 +25,11 @@
     color: #fff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.character-container img{
+    height: 200px;
+}
+
 .back-arrow{
     height: 50px;
     place-self: end;
