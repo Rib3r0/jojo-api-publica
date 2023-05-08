@@ -1,7 +1,7 @@
 'use strict'
 
 import './router.js'
-import { getCharacters } from './model.js'
+import { getCharacterInfo, getCharacters } from './model.js'
 
 let content = document.getElementById('content')
 
@@ -20,15 +20,30 @@ const createCharacters = async (id) => {
     return characters.data
 }
 
+const getCharacterImages = async (id) => {
+
+    let images = await getCharacterInfo(id)
+    return images
+
+}
+
+
 export const showCharactersCard = async (id) => {
 
-    
     let characters = await createCharacters(id)
     console.log(characters) 
     createCharactersCard(characters)
 
+}
+
+export const showCharacterImages = async (id) => {
+    
+    let images = await getCharacterImages(id)
+    console.log(images) 
+    createCharacterImages(images)
 
 }
+
 
 const createCharactersCard = (characters) =>{
 
@@ -38,22 +53,27 @@ const createCharactersCard = (characters) =>{
     characters.forEach( character => {
 
     
-        let character_container = document.createElement('a')
-        character_container.classList.add('character-container')
-        character_container.setAttribute('href','/jojo-api-publica/parte/character')
-        character_container.addEventListener("click", route)
+        let character_link = document.createElement('a')
+        let character_container = document.createElement('div')
+        character_link.classList.add('character-container')
+        character_container.setAttribute('id',character.character.mal_id)
+        character_link.setAttribute('href','/jojo-api-publica/parte/character')
+        character_link.onclick = route
     
     
     
         let character_image =document.createElement('img')
-        //console.log(character.character.images.webp.image_url)
         character_image.setAttribute('src',character.character.images.jpg.image_url)
-        character_container.append(character_image)
+        character_image.setAttribute('id',character.character.mal_id)
+        
+        character_link.append(character_image)
     
         let character_name =document.createElement('p')
         character_name.textContent = character.character.name
-        //console.log(character.character.name)
-        character_container.append(character_name)
+
+        character_name.setAttribute('id',character.character.mal_id)
+        character_link.append(character_name)
+        character_container.append(character_link)
 
         console.log(character_container);
         charactersCard.append(character_container)
@@ -64,4 +84,25 @@ const createCharactersCard = (characters) =>{
 
 }
 
+const createCharacterImages = (images) =>{
+
+    let character_images =  document.getElementById('character-images')
+    let charactersCard = document.createElement('div')
+    charactersCard.classList.add("character-images")
+    images.forEach( image => {
+    
+        let character_image =document.createElement('img')
+        character_image.setAttribute('src',image.jpg.image_url)
+
+        console.log(character_image);
+        charactersCard.append(character_image)
+    });
+
+
+    character_images.replaceChildren(charactersCard)
+
+}
+
+
 window.showCharactersCard = showCharactersCard
+window.showCharacterImages= showCharacterImages
