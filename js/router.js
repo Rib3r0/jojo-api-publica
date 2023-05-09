@@ -4,8 +4,8 @@ import { showCharacterImages, showCharactersCard } from './app.js'
 
 const routes = {
     '/jojo-api-publica/'                : '/jojo-api-publica/pages/main.html',
-    '/jojo-api-publica/parte'           : '/jojo-api-publica/pages/parte.html',
-    '/jojo-api-publica/parte/character' : '/jojo-api-publica/pages/character.html'
+    '/jojo-api-publica/season'           : '/jojo-api-publica/pages/parte.html',
+    '/jojo-api-publica/season/character' : '/jojo-api-publica/pages/character.html'
 }
 
 var parte = 0

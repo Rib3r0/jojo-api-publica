@@ -57,7 +57,7 @@ const createCharactersCard = (characters) =>{
         let character_container = document.createElement('div')
         character_link.classList.add('character-container')
         character_container.setAttribute('id',character.character.mal_id)
-        character_link.setAttribute('href','/jojo-api-publica/parte/character')
+        character_link.setAttribute('href','/jojo-api-publica/season/character')
         character_link.onclick = route
     
     
